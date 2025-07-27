@@ -3,6 +3,7 @@ import { currentUser } from "@clerk/nextjs/server";
 import { NextRequest, NextResponse } from "next/server";
 import { db } from "@/config/db";
 import { eq } from "drizzle-orm";
+import { Session } from "inspector/promises";
 
 export async function  POST(req:NextRequest){
     const user = await currentUser();
@@ -28,3 +29,4 @@ export async function  POST(req:NextRequest){
         return NextResponse.json(e)
     }
 }
+
